@@ -37,17 +37,17 @@ object MockData {
         return titleList
     }
 
-     fun getMockSmallNewsList(smallListSize : Int) : List<NewsModel>{
-       var smallNewsList  =  ArrayList<NewsModel>()
+     fun getMockSmallNewsList(smallListSize: Int): ArrayList<NewsModel> {
+         var smallNewsList = ArrayList<NewsModel>()
 
-        var smallNews1 = NewsModel(
-            "https://imgfinans.milliyet.com.tr/i/haber/f_dfdf_321421462285.jpg",
-            "Hellloooooo"
-        )
-        var smallNews2 = NewsModel(
-            "https://imgfinans.milliyet.com.tr/i/haber/f_dfdf_321421462285.jpg",
-            "Merhabaaaaaaa"
-        )
+         var smallNews1 = NewsModel(
+             "https://imgfinans.milliyet.com.tr/i/haber/f_dfdf_321421462285.jpg",
+             "Hellloooooo"
+         )
+         var smallNews2 = NewsModel(
+             "https://imgfinans.milliyet.com.tr/i/haber/f_dfdf_321421462285.jpg",
+             "Merhabaaaaaaa"
+         )
 
         smallNewsList.add(smallNews1)
         smallNewsList.add(smallNews2)
