@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cloneprojects.milliyetnewsclone.R
 import com.cloneprojects.milliyetnewsclone.databinding.AdapterItemSmallNewsBinding
-import com.cloneprojects.milliyetnewsclone.models.NewsModel
+import com.cloneprojects.milliyetnewsclone.models.NewsDetail
 
 
 class SmallNewsViewHolder(val binding: AdapterItemSmallNewsBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(
-        newsModel: NewsModel,
-        onItemClickListener: (NewsModel) -> Unit
+        newsDetail: NewsDetail,
+        onItemClickListener: (NewsDetail) -> Unit
     ) {
-        binding.newsModel = newsModel
-        itemView.setOnClickListener { onItemClickListener(newsModel) }
+        binding.newsDetail = newsDetail
+        itemView.setOnClickListener { onItemClickListener(newsDetail) }
         binding.executePendingBindings()
 
     }
