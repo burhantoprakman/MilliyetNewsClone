@@ -4,13 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cloneprojects.milliyetnewsclone.databinding.AdapterItemSmallNewsBinding
-import com.cloneprojects.milliyetnewsclone.models.NewsModel
+import com.cloneprojects.milliyetnewsclone.models.NewsDetail
 
 class NewsFragmentRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var newsList = ArrayList<NewsModel>()
-    private lateinit var onItemClickListener: (NewsModel) -> Unit
+    private var newsList = ArrayList<NewsDetail>()
+    private lateinit var onItemClickListener: (NewsDetail) -> Unit
 
-    fun setDataList(data: ArrayList<NewsModel>, onItemClickListener: (NewsModel) -> Unit) {
+    fun setDataList(data: ArrayList<NewsDetail>, onItemClickListener: (NewsDetail) -> Unit) {
         this.newsList = data
         this.onItemClickListener = onItemClickListener
     }

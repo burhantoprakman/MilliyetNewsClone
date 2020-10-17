@@ -2,6 +2,8 @@ package com.cloneprojects.milliyetnewsclone.mock
 
 import com.cloneprojects.milliyetnewsclone.NewsFragment
 import com.cloneprojects.milliyetnewsclone.models.FragmentModel
+import com.cloneprojects.milliyetnewsclone.models.NewsDetail
+import com.cloneprojects.milliyetnewsclone.models.NewsImage
 import com.cloneprojects.milliyetnewsclone.models.NewsModel
 
 object MockData {
@@ -39,20 +41,25 @@ object MockData {
 
      fun getMockSmallNewsList(smallListSize: Int): ArrayList<NewsModel> {
          var smallNewsList = ArrayList<NewsModel>()
+         var newsResultList = ArrayList<NewsDetail>()
+         var newsImageArray = ArrayList<NewsImage>()
+         val imageList =
+             NewsImage("https://imgfinans.milliyet.com.tr/i/haber/f_dfdf_321421462285.jpg")
+         newsImageArray.add(imageList)
+         var result = NewsDetail("Title", "Body", newsImageArray)
+         newsResultList.add(result)
 
          var smallNews1 = NewsModel(
-             "https://imgfinans.milliyet.com.tr/i/haber/f_dfdf_321421462285.jpg",
-             "Hellloooooo"
+             newsResultList
          )
          var smallNews2 = NewsModel(
-             "https://imgfinans.milliyet.com.tr/i/haber/f_dfdf_321421462285.jpg",
-             "Merhabaaaaaaa"
+             newsResultList
          )
 
-        smallNewsList.add(smallNews1)
-        smallNewsList.add(smallNews2)
+         smallNewsList.add(smallNews1)
+         smallNewsList.add(smallNews2)
 
-        return smallNewsList
+         return smallNewsList
 
 
 

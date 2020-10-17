@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cloneprojects.milliyetnewsclone.databinding.FragmentNewsBinding
-import com.cloneprojects.milliyetnewsclone.mock.MockData
 import com.cloneprojects.milliyetnewsclone.models.NewsModel
 import com.cloneprojects.milliyetnewsclone.viewmodel.NewsFragmentViewModel
 import kotlinx.android.synthetic.main.fragment_news.*
@@ -51,17 +50,17 @@ class NewsFragment : Fragment() {
     fun makeApiCall(): NewsFragmentViewModel {
         val viewModel = ViewModelProvider(this).get(NewsFragmentViewModel::class.java)
         viewModel.getRecyclerListDataObserver().observe(viewLifecycleOwner, Observer<NewsModel> {
-//            if(it != null) {
-            //update the adapter
-            viewModel.setAdapterData(MockData.getMockSmallNewsList(10), { newsModel ->
-                Toast.makeText(context, "Clicked :  ${newsModel.newsTitle} ", Toast.LENGTH_SHORT)
-                    .show()
-            })
-//            } else {
-//                Toast.makeText(activity?.applicationContext, "No DATA", Toast.LENGTH_LONG).show()
-//            }
-        })
+            if (it != null) {
 
+                viewModel.setAdapterData(arrayListOf(it)[0].results, { newsDetail ->
+                    Toast.makeText(context, "Clicked :  ${newsDetail.title} ", Toast.LENGTH_SHORT)
+                        .show()
+                })
+            } else {
+                Toast.makeText(activity?.applicationContext, "No DATA", Toast.LENGTH_LONG).show()
+            }
+        })
+        viewModel.getNewsFeed()
         return viewModel
     }
 }
